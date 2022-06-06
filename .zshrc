@@ -1,9 +1,13 @@
 #! /usr/bin/env zsh
 
-if [ ! -e ~/.local/share/zsh/antigen.zsh ]; then
-  mkdir -p ~/.local/share/zsh
-  curl -L git.io/antigen > ~/.local/share/zsh/antigen.zsh
-fi
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
+
+# if [ ! -e ~/.local/share/zsh/antigen.zsh ]; then
+#   mkdir -p ~/.local/share/zsh
+#   curl -L git.io/antigen > ~/.local/share/zsh/antigen.zsh
+# fi
 
 source ~/.local/share/zsh/antigen.zsh
 

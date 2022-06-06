@@ -3,6 +3,17 @@
 A collection of dotfiles, scripts and programs to make MacOS usable for a
 programmer.
 
+A list of essential tools is given below:
+- Homebrew
+- ZSH (shell)
+- Git
+- Alacritty (terminal)
+- Tmux (multiplexer)
+- Neovim (editor)
+- Karabiner
+- skhd (Hotkeys)
+- rectangle or yabai (window management)
+
 ## Package Manager
 
 Although nix is coming up as an alternative declarative package manager, I so
@@ -25,7 +36,7 @@ Thats it, now the `brew` command is available to you.
 
 ### Essentail programs
 ```bash
-brew install python htop neovim vim node gcc clang cmake git tmux
+brew install python htop neovim vim node gcc clang cmake git tmux jq
 ```
 
 ## GNU programs
@@ -70,3 +81,25 @@ Install git config
 ```
 make git
 ```
+
+## Alacritty
+
+## Tmux
+
+## Neovim
+
+## Karabiner
+
+## skhd
+
+## Rectangle
+
+## Yabai
+
+I recently tried [yabai](https://github.com/koekeishiya/yabai) as a window
+management tool. So far, I am not sure if I want to keep it, but I have found
+some favour in the idea of going back to a tiling window manager: The
+keyboard-centric movement is an absolute joy. Also, so much time is spared by
+skipping animations and going from one window or space to another instantly.
+
+### spacebar

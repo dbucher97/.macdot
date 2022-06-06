@@ -1,4 +1,4 @@
-all: zsh git
+all: zsh git nvim
 
 zsh: profile
 	@echo "\033[0;32m~> Linking zshrc\033[0m"
@@ -14,5 +14,10 @@ git:
 	@echo "\033[0;32m~> Linking git\033[0m"
 	ln -snf $(PWD)/.gitconfig ~/.gitconfig
 
+nvim:
+	@echo "\033[0;32m~> Linking nvim\033[0m"
+	@mkdir -p ~/.config
+	ln -snf $(PWD)/nvim ~/.config/nvim
+
 clean:
-	rm -f ~/.zshrc ~/.profile ~/.gnuutils ~/.gitconfig
+	rm -f ~/.zshrc ~/.profile ~/.gnuutils ~/.gitconfig ~/.config/nvim

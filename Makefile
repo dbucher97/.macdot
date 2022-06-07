@@ -26,9 +26,11 @@ tmux:
 	@echo "\033[0;32m~> Linking $@\033[0m"
 	ln -snf $(PWD)/.tmux.conf ~/.tmux.conf
 
-keyboard: config
+keyboard:
 	@echo "\033[0;32m~> Linking $@\033[0m"
-	ln -snf $(PWD)/osx-keyboard-layout-german-no-deadkeys ~/.config/osx-keyboard-layout-german-no-deadkeys
+	@mkdir -p "~/Library/Keyboard Layouts/"
+	cp -r "$(PWD)/osx-keyboard-layout-german-no-deadkeys/German No Deadkeys.bundle" \
+		"~/Library/Keyboard Layouts/"
 
 yabai: config
 	@echo "\033[0;32m~> Linking $@\033[0m"
@@ -67,6 +69,6 @@ config:
 
 clean:
 	rm -rf ~/.zshrc ~/.profile ~/.gnuutils ~/.gitconfig ~/.config/nvim ~/.tmux.conf \
-		~/.config/osx-keyboard-layout-german-no-deadkeys ~/.config/yabai \
+		"~/Library/Keyboard Layouts/German No Deadkeys.bundle" ~/.config/yabai \
 		~/.config/spacebar ~/.config/skhd ~/.config/kitty ~/.config/karabiner \
 		~/.config/latexindent.yaml ~/.config/stylua.toml

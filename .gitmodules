@@ -1,0 +1,3 @@
+[submodule "osx-keyboard-layout-german-no-deadkeys"]
+	path = osx-keyboard-layout-german-no-deadkeys
+	url = git@github.com:sebroeder/osx-keyboard-layout-german-no-deadkeys.git

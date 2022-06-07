@@ -8,6 +8,7 @@
 #   mkdir -p ~/.local/share/zsh
 #   curl -L git.io/antigen > ~/.local/share/zsh/antigen.zsh
 # fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 source ~/.local/share/zsh/antigen.zsh
 

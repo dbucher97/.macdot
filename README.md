@@ -14,6 +14,20 @@ A list of essential tools is given below:
 - skhd (Hotkeys)
 - rectangle or yabai (window management)
 
+## Defaults
+
+Some defaults values are just shite:
+```bash
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
+
+# VSCode
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+```
+
 ## Package Manager
 
 Although nix is coming up as an alternative declarative package manager, I so

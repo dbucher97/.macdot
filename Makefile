@@ -2,6 +2,8 @@ all: zsh git nvim alacritty tmux karabiner keyboard latexindent.yaml stylua.toml
 
 zsh: profile
 	@echo "\033[0;32m~> Linking $@\033[0m"
+	mkdir -p ~/.local/share/zsh/
+	curl -L git.io/antigen > ~/.local/share/zsh/antigen.zsh
 	ln -snf $(PWD)/.zshrc ~/.zshrc
 
 profile:
@@ -71,4 +73,4 @@ clean:
 	rm -rf ~/.zshrc ~/.profile ~/.gnuutils ~/.gitconfig ~/.config/nvim ~/.tmux.conf \
 		"~/Library/Keyboard Layouts/German No Deadkeys.bundle" ~/.config/yabai \
 		~/.config/spacebar ~/.config/skhd ~/.config/kitty ~/.config/karabiner \
-		~/.config/latexindent.yaml ~/.config/stylua.toml
+		~/.config/latexindent.yaml ~/.config/stylua.toml ~/.local/share/zsh/antigen.zsh

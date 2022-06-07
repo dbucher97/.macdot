@@ -75,7 +75,7 @@ Finally, make sure, your `.profile` sources `.gnuutils`, which loads the utils'
 binary paths into your runtime path. _Ignore this step_ if you are using the
 `.profile` from this repo.
 
-## ZSH
+## zsh
 
 A usable shell `zsh`, the brew version
 
@@ -97,7 +97,8 @@ make profile
 
 Install antigen
 ```bash
-curl -L git.io/antigen > antigen.zsh
+mkdir -p ~/.local/share/zsh/
+curl -L git.io/antigen > ~/.local/share/zsh/antigen.zsh
 ```
 
 ## Git

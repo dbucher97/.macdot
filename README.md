@@ -65,14 +65,19 @@ brew install zsh fzf
 
 Add shell to standard shells list and change the shell
 ```bash
-echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/zsh
+echo "/opt/homebrew/bin/zsh" | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/zsh
 ```
 
 Install the `zshrc` and `profile`
 ```bash
 make zsh
 make profile
+```
+
+Install antigen
+```bash
+curl -L git.io/antigen > antigen.zsh
 ```
 
 ## Git

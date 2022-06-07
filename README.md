@@ -50,7 +50,7 @@ Thats it, now the `brew` command is available to you.
 
 ### Essentail programs
 ```bash
-brew install python htop neovim vim node gcc clang cmake git tmux jq
+brew install python htop neovim vim node gcc cmake git tmux jq
 ```
 
 ## GNU programs
@@ -102,16 +102,51 @@ make git
 ```
 
 ## Alacritty
+Install alacritty config
+```
+make -B alacritty
+```
 
 ## Tmux
+Install tmux config
+```
+make -B tmux
+```
 
 ## Neovim
+Install neovim config
+```
+make -B nvim
+```
+
+Make sure you install the fitting language servers aswell as the python bindings
+for neovim
+```
+pip install neovim
+brew install pyright lua-language-server (...)
+```
 
 ## Karabiner
+Install karabiner config and make sure key grabbing is allowed in system
+preferences.
+```
+brew install karabiner-elements
+make -B karabiner
+```
 
 ## skhd
+Install skhd and start daemon.
+```
+brew install skhd
+make -B skhd
+brew services start skhd
+```
 
 ## Rectangle
+Install rectangle for basic window managemet. Check box to start on login.
+```
+brew install rectangle
+```
 
 ## Yabai
 
@@ -121,4 +156,29 @@ some favour in the idea of going back to a tiling window manager: The
 keyboard-centric movement is an absolute joy. Also, so much time is spared by
 skipping animations and going from one window or space to another instantly.
 
+```
+brew install yabai
+make -B yabai
+brew services start yabai
+```
+
+For advanced root config with System Integrity Protection disabled, see yabai's
+wiki.
+
 ### spacebar
+
+A small, light bar for usage with yabai
+```
+brew install spacebar
+make -B spacebar
+brew services start spacebar
+```
+
+## Other config files
+
+Some other config files
+```
+make .latexmkrc
+make stylua.toml
+make latexindent.yaml
+```

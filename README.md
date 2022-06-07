@@ -5,14 +5,20 @@ programmer.
 
 A list of essential tools is given below:
 - Homebrew
-- ZSH (shell)
-- Git
-- Alacritty (terminal)
-- Tmux (multiplexer)
-- Neovim (editor)
-- Karabiner
-- skhd (Hotkeys)
+- **zsh** (shell) 
+- **Git**
+- **Alacritty** (terminal) *
+- **Tmux** (multiplexer)
+- **Neovim** (editor)
+- **Karabiner**
+- **skhd** (Hotkeys)
+- **Other config files**
 - rectangle or yabai (window management)
+
+Installs all the config for the **bold programs**
+```
+make -B
+```
 
 ## Defaults
 

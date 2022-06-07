@@ -1,28 +1,72 @@
-all: zsh git nvim alacritty
+all: zsh git nvim alacritty tmux karabiner keyboard latexindent.yaml stylua.toml .latexmkrc
 
 zsh: profile
-	@echo "\033[0;32m~> Linking zshrc\033[0m"
+	@echo "\033[0;32m~> Linking $@\033[0m"
 	ln -snf $(PWD)/.zshrc ~/.zshrc
 
 profile:
-	@echo "\033[0;32m~> Linking profile and gnu\033[0m"
+	@echo "\033[0;32m~> Linking $@\033[0m"
 	ln -snf $(PWD)/.profile ~/.profile
 	ln -snf $(PWD)/.gnuutils ~/.gnuutils
 	@touch ~/.pprofile
 
 git:
-	@echo "\033[0;32m~> Linking git\033[0m"
+	@echo "\033[0;32m~> Linking $@\033[0m"
 	ln -snf $(PWD)/.gitconfig ~/.gitconfig
 
-nvim:
-	@echo "\033[0;32m~> Linking nvim\033[0m"
-	@mkdir -p ~/.config
-	ln -snf $(PWD)/nvim ~/.config/nvim
+nvim: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
 
-alacritty:
-	@echo "\033[0;32m~> Linking alacritty\033[0m"
+alacritty: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
+
+tmux:
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/tmux.conf ~/.tmux.conf
+
+keyboard: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/osx-keyboard-layout-german-no-deadkeys ~/.config/osx-keyboard-layout-german-no-deadkeys
+
+yabai: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
+
+spacebar: yabai config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
+
+skhd: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
+
+kitty: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
+
+karabiner: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
+
+latexindent.yaml: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
+
+stylua.toml: config
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/.config/$@
+
+.latexmkrc:
+	@echo "\033[0;32m~> Linking $@\033[0m"
+	ln -snf $(PWD)/$@ ~/$@
+
+config:
 	@mkdir -p ~/.config
-	ln -snf $(PWD)/nvim ~/.config/alacritty
 
 clean:
-	rm -f ~/.zshrc ~/.profile ~/.gnuutils ~/.gitconfig ~/.config/nvim
+	rm -rf ~/.zshrc ~/.profile ~/.gnuutils ~/.gitconfig ~/.config/nvim ~/.tmux.conf \
+		~/.config/osx-keyboard-layout-german-no-deadkeys ~/.config/yabai \
+		~/.config/spacebar ~/.config/skhd ~/.config/kitty ~/.config/karabiner \
+		~/.config/latexindent.yaml ~/.config/stylua.toml

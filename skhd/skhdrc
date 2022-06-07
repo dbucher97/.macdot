@@ -1,0 +1,79 @@
+lctrl + lalt - h : yabai -m window --focus west
+lctrl + lalt - j : yabai -m window --focus south
+lctrl + lalt - k : yabai -m window --focus north
+lctrl + lalt - l : yabai -m window --focus east
+
+ctrl - h [
+  "alacritty" ~
+  * : yabai -m window --focus west
+]
+ctrl - j [
+  "alacritty" ~
+  * : yabai -m window --focus south
+]
+ctrl - k [
+  "alacritty" ~
+  * : yabai -m window --focus north
+]
+ctrl - l [
+  "alacritty" ~
+  * : yabai -m window --focus east
+]
+
+cmd + shift - h : yabai -m window --warp west
+cmd + shift - j : yabai -m window --warp south
+cmd + shift - k : yabai -m window --warp north
+cmd + shift - l : yabai -m window --warp east
+
+alt + shift - h : yabai -m window --swap west
+alt + shift - j : yabai -m window --swap south
+alt + shift - k : yabai -m window --swap north
+alt + shift - l : yabai -m window --swap east
+
+lctrl + lalt - tab : yabai -m window --focus recent
+alt + shift - tab : yabai -m window --swap recent
+
+lctrl + lalt - g : yabai -m space --toggle padding && yabai -m space --toggle gap
+lctrl + lalt - f : yabai -m window --toggle zoom-fullscreen
+
+lctrl + lalt + cmd - g : yabai -m space --padding rel:16:16:16:16 && yabai -m space --gap rel:8
+lctrl + lalt + cmd - f : yabai -m space --padding rel:-16:-16:-16:-16 && yabai -m space --gap rel:-8
+
+lctrl + lalt + shift - g : yabai -m space --padding abs:8:8:8:8 && yabai -m space --gap abs:8
+
+lctrl + lalt - return : open -n -a Alacritty
+lctrl + lalt - q : yabai -m window --close
+lctrl + lalt - o : yabai -m window --toggle float;\
+
+lctrl + lalt - p : yabai -m window --toggle sticky;\
+          yabai -m window --grid 3:3:2:2:1:1
+
+lctrl + lalt - y : yabai -m space --mirror y-axis
+lctrl + lalt - x : yabai -m space --mirror x-axis
+
+lctrl + lalt - b : yabai -m space --balance
+
+cmd - 1 : ~/.config/yabai/scripts/goto.sh 1
+cmd - 2 : ~/.config/yabai/scripts/goto.sh 2
+cmd - 3 : ~/.config/yabai/scripts/goto.sh 3
+cmd - 4 : ~/.config/yabai/scripts/goto.sh 4
+cmd - 5 : ~/.config/yabai/scripts/goto.sh 5
+cmd - 6 : ~/.config/yabai/scripts/goto.sh 6
+cmd - 7 : ~/.config/yabai/scripts/goto.sh 7
+cmd - 8 : ~/.config/yabai/scripts/goto.sh 8
+cmd - 9 : ~/.config/yabai/scripts/goto.sh 9
+
+shift + cmd - 1 : ~/.config/yabai/scripts/move.sh 1
+shift + cmd - 2 : ~/.config/yabai/scripts/move.sh 2
+shift + cmd - 3 : ~/.config/yabai/scripts/move.sh 3
+shift + cmd - 4 : ~/.config/yabai/scripts/move.sh 4
+shift + cmd - 5 : ~/.config/yabai/scripts/move.sh 5
+shift + cmd - 6 : ~/.config/yabai/scripts/move.sh 6
+shift + cmd - 7 : ~/.config/yabai/scripts/move.sh 7
+shift + cmd - 8 : ~/.config/yabai/scripts/move.sh 8
+shift + cmd - 9 : ~/.config/yabai/scripts/move.sh 9
+
+lctrl + lalt - space : ~/.config/yabai/scripts/goto.sh new
+lctrl + lalt - n : ~/.config/yabai/scripts/move.sh new
+lctrl + lalt - x : yabai -m space --destroy
+

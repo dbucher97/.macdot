@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+spacebar -m config spaces_for_all_displays  on
+spacebar -m config display_separator        on
+spacebar -m config position             bottom
+spacebar -m config height               20
+spacebar -m config title                off
+spacebar -m config spaces               on
+spacebar -m config clock                on
+spacebar -m config power                on
+spacebar -m config padding_left         16
+spacebar -m config padding_right        16
+spacebar -m config spacing_left         16
+spacebar -m config spacing_right        32
+spacebar -m config text_font            "Mononoki Nerd Font:Regular:12.0"
+spacebar -m config icon_font            "Mononoki Nerd Font:Regular:14.0"
+spacebar -m config background_color     0xe51e1e2e
+spacebar -m config foreground_color     0xff988ba2
+spacebar -m config space_icon_color     0xfff8bd96
+spacebar -m config space_icon_color_secondary     0xfff8bd96
+spacebar -m config space_icon_color_tertiary     0xfff8bd96
+spacebar -m config power_icon_color     0xffabe9b3
+spacebar -m config battery_icon_color   0xff96cdfb
+spacebar -m config dnd_icon_color       0xfff28fad
+spacebar -m config clock_icon_color     0xffb5e8e0
+spacebar -m config power_icon_strip      ﮣ
+spacebar -m config space_icon_strip     1 2 3 4 5 6 7 8 9
+spacebar -m config space_icon           
+spacebar -m config clock_icon           
+spacebar -m config dnd_icon             
+

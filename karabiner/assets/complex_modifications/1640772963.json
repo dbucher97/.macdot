@@ -1,0 +1,1 @@
+{"title":"Cmd-H to Cmd-F12 (Consume Cmd-H -> no hide)","rules":[{"description":"Cmd-H to Cmd-F12 (Consume Cmd-H -> no hide)","manipulators":[{"type":"basic","description":"","from":{"key_code":"h","modifiers":{"mandatory":["command"]}},"to":[{"repeat":true,"key_code":"f12","modifiers":["left_gui"]}]}]}]}

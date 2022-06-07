@@ -1,0 +1,18 @@
+defaultIndent: "  "
+removeTrailingWhitespace: 1
+
+lookForAlignDelims:
+  alignat:
+    delims: 1
+    delimiterRegEx: '(?<!\\)(&{1,2})'
+
+# modifyLineBreaks:
+#   textWrapOptions:
+#     columns: 80
+#     perCodeBlockBasis: 1
+#     all: 1
+#   removeParagraphLineBreaks:
+#     all: 1
+#     beforeTextWrap: 1
+#     paragraphsStopAt:
+#       comments: 1

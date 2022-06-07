@@ -23,6 +23,9 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
+
+# VSCode
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
 ## Package Manager

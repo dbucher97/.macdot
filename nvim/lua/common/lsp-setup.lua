@@ -48,5 +48,17 @@ return {
     capabilities = capabilities,
     filetypes = { "html", "css", "typescriptreact", "javascriptreact", "svelte" },
   },
-  pylsp = {}
+  -- pylsp = {}
+  pyright = {
+    settings = {
+       python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = "workspace",
+          useLibraryCodeForTypes = true,
+          typeCheckingMode = "off",
+        }
+      }
+    }
+  }
 }

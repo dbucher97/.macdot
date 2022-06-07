@@ -24,7 +24,7 @@ alacritty: config
 
 tmux:
 	@echo "\033[0;32m~> Linking $@\033[0m"
-	ln -snf $(PWD)/tmux.conf ~/.tmux.conf
+	ln -snf $(PWD)/.tmux.conf ~/.tmux.conf
 
 keyboard: config
 	@echo "\033[0;32m~> Linking $@\033[0m"

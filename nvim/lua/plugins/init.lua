@@ -92,6 +92,13 @@ local setup = function(use)
   }
 
   use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = require "plugins._null-ls",
+    opt = true,
+    after = 'nvim-lspconfig',
+  }
+
+  use {
     "mickael-menu/zk-nvim",
     config = require "plugins._zk-nvim",
     opt = true,
@@ -107,6 +114,16 @@ local setup = function(use)
     opt = true,
     setup = {
       require("common").lazy_load("toggleterm.nvim")
+    }
+  }
+
+  use {
+    "CosmicNvim/cosmic-ui",
+    config = require "plugins._cosmic-ui",
+    requires = { 'MunifTanjim/nui.nvim' },
+    opt = true,
+    setup = {
+      require("common").lazy_load("cosmic-ui")
     }
   }
   --   use {

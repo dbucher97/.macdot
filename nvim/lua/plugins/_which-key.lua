@@ -125,8 +125,8 @@ return function()
     c = {
       name = "Code",
       -- d = { '', "Type Definition" },
-      r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename object" },
-      a = { "<cmd>CodeActionMenu<CR>", "Code actions" },
+      r = { '<cmd>require("cosmic-ui").rename()<CR>', "Rename object" },
+      a = { '<cmd>lua require("cosmic-ui").code_actions()<cr>', "Code actions" },
       f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
       e = {
         "<cmd>lua vim.lsp.diagnostic.open_float()<CR>",
@@ -229,6 +229,7 @@ return function()
   wk.register({
     c = {
       f = { ":'<,'>lua vim.lsp.buf.range_formatting()<CR>", "Format range" },
+      a = { '<cmd>lua require("cosmic-ui").range_code_actions()<cr>', "Code action"}
     },
     n = {
       name = "Zettels",

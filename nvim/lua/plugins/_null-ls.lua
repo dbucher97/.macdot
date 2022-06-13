@@ -5,6 +5,8 @@ return function()
     sources = {
       formatting.stylua,
       formatting.prettierd,
+      formatting.black,
+      nls.builtins.code_actions.gitsigns,
     },
   }
 end

@@ -51,10 +51,11 @@ return {
   -- pylsp = {}
   pyright = {
     settings = {
-       python = {
+      python = {
+        venvPath = "/opt/homebrew/Caskroom/miniforge/base/envs/",
         analysis = {
           autoSearchPaths = true,
-          diagnosticMode = "workspace",
+          diagnosticMode = "openFilesOnly",
           useLibraryCodeForTypes = true,
           typeCheckingMode = "off",
         }

@@ -58,7 +58,7 @@ return function()
   local colors = require("catppuccin.api.colors").get_colors()
   require("catppuccin").remap {
     ColorColumn = { bg = colors.mantle },
-    IndentBlanklineContextChar = { fg = colors.flamingo, gui = "nocombine" },
+    IndentBlanklineContextChar = { fg = colors.surface0, gui = "nocombine" },
     NeogitHunkHeader = { bg = colors.mantle, fg = colors.mantle },
     Visual = { bg = "#66556c" },
     TSH1 = { fg = colors.peach, style = "underline" },

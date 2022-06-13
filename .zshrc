@@ -8,7 +8,6 @@
 #   mkdir -p ~/.local/share/zsh
 #   curl -L git.io/antigen > ~/.local/share/zsh/antigen.zsh
 # fi
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 source ~/.local/share/zsh/antigen.zsh
 
@@ -22,6 +21,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle ael-code/zsh-colored-man-pages
+antigen bundle esc/conda-zsh-completion
 
 antigen theme wezm
 
@@ -44,3 +44,4 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Load profile
 source ~/.profile
+

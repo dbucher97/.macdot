@@ -1,7 +1,11 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export MATPLOTLIBRC=$HOME/.config/matplotlib
+# Homebrew stuff
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/opt/homebrew/bin/:$PATH"
+
+# export MATPLOTLIBRC=$HOME/.config/matplotlib
 export EDITOR=nvim
 
 # Aliases

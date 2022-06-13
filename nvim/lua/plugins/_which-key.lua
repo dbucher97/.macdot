@@ -2,8 +2,7 @@ return function()
   local wk = require "which-key"
   wk.setup {
     key_labels = {
-      ["<space>"] = "SPC",
-      ["<cr>"] = "RET",
+      ["<space>"] = "SPC", ["<cr>"] = "RET",
       ["<CR>"] = "RET",
       ["<tab>"] = "TAB",
       ["<Tab>"] = "TAB",
@@ -125,7 +124,7 @@ return function()
     c = {
       name = "Code",
       -- d = { '', "Type Definition" },
-      r = { '<cmd>require("cosmic-ui").rename()<CR>', "Rename object" },
+      r = { '<cmd>lua require("cosmic-ui").rename()<CR>', "Rename object" },
       a = { '<cmd>lua require("cosmic-ui").code_actions()<cr>', "Code actions" },
       f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
       e = {

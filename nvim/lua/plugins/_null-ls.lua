@@ -3,9 +3,8 @@ return function()
   local formatting = nls.builtins.formatting
   nls.setup {
     sources = {
-      formatting.stylua,
       formatting.prettierd,
-      formatting.black,
+      formatting.blue,
       nls.builtins.code_actions.gitsigns,
     },
   }

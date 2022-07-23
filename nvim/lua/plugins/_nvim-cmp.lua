@@ -3,7 +3,7 @@ return function()
   local lspkind = require 'lspkind'
   cmp.setup {
     completion = {
-      keyword_length = 2,
+      keyword_length = 1,
     },
     snippet = {
       expand = function(args)
@@ -16,7 +16,7 @@ return function()
       { name = 'luasnip' },
       { name = 'path' },
       { name = 'neorg' },
-      { name = 'buffer', keyword_length = 5 },
+      { name = 'buffer', keyword_length = 3 },
     },
     mapping = {
       ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),

@@ -9,7 +9,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-local core_modules = { 'options', 'plugins' }
+local core_modules = { 'options', 'plugins', 'keymaps' }
 
 for _, module in ipairs(core_modules) do
   local ok, err = pcall(require, module)

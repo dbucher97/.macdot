@@ -12,6 +12,7 @@ local setup = function(use)
 
   use {
     "catppuccin/nvim",
+    as = "catppuccin",
     config = require "plugins._catppuccin",
     -- after = "packer.nvim",
   }
@@ -25,6 +26,12 @@ local setup = function(use)
   use {
     "kyazdani42/nvim-web-devicons",
     after = "packer.nvim",
+  }
+
+  use {
+    "glepnir/dashboard-nvim",
+    after = "packer.nvim",
+    config = require('plugins._dashboard'),
   }
 
   use {
@@ -67,11 +74,19 @@ local setup = function(use)
   }
 
   use {
+    "danymat/neogen",
+    opt = true,
+    config = require "plugins._neogen",
+    setup = function() require("common").lazy_load("neogen") end
+  }
+
+  use {
     "lewis6991/gitsigns.nvim",
     config = require "plugins._gitsigns",
     opt = true,
     setup = function() require("common").lazy_load("gitsigns.nvim") end
   }
+
   --   use {
   --     "andymass/vim-matchup",
   --     opt = true,
@@ -126,6 +141,11 @@ local setup = function(use)
       require("common").lazy_load("cosmic-ui")
     }
   }
+  --
+  -- use {
+  --   'sunjon/shade.nvim',
+  --   config = require "plugins._shade"
+  -- }
   --   use {
   --     "ray-x/lsp_signature.nvim",
   --     enabled = false,
@@ -183,14 +203,15 @@ local setup = function(use)
 
   use {
     "nvim-telescope/telescope.nvim",
+    requires = { "nvim-telescope/telescope-file-browser.nvim" },
     config = require "plugins._telescope",
     after = "bufferline.nvim"
   }
 
-  use {
-    "folke/which-key.nvim",
-    config = require "plugins._which-key",
-  }
+  -- use {
+  --   "folke/which-key.nvim",
+  --   config = require "plugins._which-key",
+  -- }
 
   use {
     "TimUntersberger/neogit",

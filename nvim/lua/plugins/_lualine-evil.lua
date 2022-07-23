@@ -1,4 +1,4 @@
-local colors = require("catppuccin.api.colors").get_colors()
+local colors = require("catppuccin.palettes").get_palette()
 
 local conditions = {
   buffer_not_empty = function()

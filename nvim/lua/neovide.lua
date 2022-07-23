@@ -1,8 +1,8 @@
 local g = vim.g
 
-g.neovide_cursor_animation_length = 0.03
+g.neovide_cursor_animation_length = 0.05
 
-local font = "JetBrainsMono Nerd Font"
+local font = "Mononoki Nerd Font"
 local fontsize = 12
 vim.api.nvim_set_option("guifont", font .. ":h" .. fontsize)
 

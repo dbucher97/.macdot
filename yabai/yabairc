@@ -40,4 +40,4 @@ yabai -m signal --add event=space_changed action=~/.config/yabai/scripts/away.sh
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Digital Colour Meter$" sticky=on manage=off
 yabai -m rule --add app="^Spotify$" sticky=on manage=off
-yabai -m config external_bar all:0:20
+# yabai -m config external_bar all:0:20

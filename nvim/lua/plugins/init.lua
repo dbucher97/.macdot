@@ -40,16 +40,16 @@ local setup = function(use)
     config = require('plugins._lualine'),
   }
 
-  use { "akinsho/bufferline.nvim",
-    after = "nvim-web-devicons",
-    config = require "plugins._bufferline"
-  }
+  -- use { "akinsho/bufferline.nvim",
+  --   after = "nvim-web-devicons",
+  --   config = require "plugins._bufferline"
+  -- }
 
   use {
     -- "aserowy/tmux.nvim",
     "dbucher97/tmux.nvim",
     config = require "plugins._tmux",
-    after = "bufferline.nvim",
+    after = "nvim-web-devicons",
   }
 
   use {
@@ -113,14 +113,14 @@ local setup = function(use)
     after = 'nvim-lspconfig',
   }
 
-  use {
-    "mickael-menu/zk-nvim",
-    config = require "plugins._zk-nvim",
-    opt = true,
-    setup = {
-      require("common").lazy_load("zk-nvim")
-    }
-  }
+  -- use {
+  --   "mickael-menu/zk-nvim",
+  --   config = require "plugins._zk-nvim",
+  --   opt = true,
+  --   setup = {
+  --     require("common").lazy_load("zk-nvim")
+  --   }
+  -- }
 
   use {
     "akinsho/toggleterm.nvim",
@@ -132,15 +132,15 @@ local setup = function(use)
     }
   }
 
-  use {
-    "CosmicNvim/cosmic-ui",
-    config = require "plugins._cosmic-ui",
-    requires = { 'MunifTanjim/nui.nvim' },
-    opt = true,
-    setup = {
-      require("common").lazy_load("cosmic-ui")
-    }
-  }
+  -- use {
+  --   "CosmicNvim/cosmic-ui",
+  --   config = require "plugins._cosmic-ui",
+  --   requires = { 'MunifTanjim/nui.nvim' },
+  --   opt = true,
+  --   setup = {
+  --     require("common").lazy_load("cosmic-ui")
+  --   }
+  -- }
   --
   -- use {
   --   'sunjon/shade.nvim',
@@ -205,7 +205,7 @@ local setup = function(use)
     "nvim-telescope/telescope.nvim",
     requires = { "nvim-telescope/telescope-file-browser.nvim" },
     config = require "plugins._telescope",
-    after = "bufferline.nvim"
+    after = "nvim-web-devicons"
   }
 
   -- use {
@@ -236,6 +236,11 @@ local setup = function(use)
     run = "cd app && yarn install",
     ft = "markdown",
     event = "BufEnter"
+  }
+
+  use {
+    "ThePrimeagen/vim-be-good",
+    cmd = { "VimBeGood" }
   }
 end
 

@@ -125,7 +125,6 @@ local setup = function(use)
   use {
     "akinsho/toggleterm.nvim",
     config = require "plugins._toggleterm",
-    tag = 'v1.*',
     opt = true,
     setup = {
       require("common").lazy_load("toggleterm.nvim")

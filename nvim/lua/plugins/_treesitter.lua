@@ -7,7 +7,7 @@ return function()
                         "html",
                         "markdown",
                         "python",
-                        "javascript", 
+                        "javascript",
                         "lua",
                         "dockerfile",
                         "bash",
@@ -32,13 +32,13 @@ return function()
     },
   }
 
-  require("nvim-treesitter.highlight").set_custom_captures {
-     ["h1heading"] = "TSH1",
-     ["h2heading"] = "TSH2",
-     ["h3heading"] = "TSH3",
-     ["h4heading"] = "TSH4",
-     ["h5heading"] = "TSH5",
-     ["h6heading"] = "TSH6",
-     ["hmarker"] = "TSHMarker",
-  }
+  -- require("nvim-treesitter.highlight").set_custom_captures {
+  --    ["h1heading"] = "TSH1",
+  --    ["h2heading"] = "TSH2",
+  --    ["h3heading"] = "TSH3",
+  --    ["h4heading"] = "TSH4",
+  --    ["h5heading"] = "TSH5",
+  --    ["h6heading"] = "TSH6",
+  --    ["hmarker"] = "TSHMarker",
+  -- }
 end

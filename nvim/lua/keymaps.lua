@@ -1,5 +1,4 @@
-local default = { silent = true }
-
+local default = { silent = true }keu
 local set = vim.keymap.set
 
 set('n', '<leader><Tab>', '<cmd>b#<CR>', default)
@@ -26,6 +25,7 @@ set('n', '<leader>bp', '<cmd>bp<cr>', default)
 set('n', '<leader>bn', '<cmd>bn<cr>', default)
 set('n', '<leader>bl', '<cmd>b#<cr>', default)
 set('n', '<leader>bd', '<cmd>bd %<cr>', default)
+--[[
 set('n', '<leader>bj', '<cmd>BufferLineCycleNext<cr>', default)
 set('n', '<leader>bk', '<cmd>BufferLineCyclePrev<cr>', default)
 set('n', '<leader>bJ', '<cmd>BufferLineMoveNext<cr>', default)
@@ -34,7 +34,7 @@ set('n', '<leader>bb', '<cmd>BufferLinePick<cr>', default)
 for i = 1, 9 do
   set('n', '<leader>b' .. i, '<cmd>BufferLineGoToBuffer ' .. i .. '<cr>', default)
 end
-
+--]]
 -- NvimTree
 set('n', '<Tab>', '<cmd>NvimTreeToggle<CR>', default)
 set('n', '<leader>te', '<cmd>NvimTreeOpen<CR>', default)
@@ -65,17 +65,16 @@ set('n', '<leader>cr', function() require('cosmic-ui').rename() end, default)
 set('n', '<leader>ca', function() require('cosmic-ui').code_actions() end, default)
 set('n', '<leader>cf', vim.lsp.buf.formatting, default)
 set('v', '<leader>cf', '<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>', default)
-set('n', '<leader>ce', vim.lsp.diagnostic.show_position_diagnostics, default)
-set('n', '<leader>cl', vim.lsp.diagnostic.show_line_diagnostics, default)
-set('n', '<leader>cq', vim.lsp.diagnostic.set_qflist, default)
+set('n', '<leader>ce', vim.diagnostic.open_float, default)
+set('n', '<leader>cq', vim.diagnostic.setqflist, default)
+set('n', '<c-n>', vim.diagnostic.goto_next, default)
+set('n', '<c-p>', vim.diagnostic.goto_prev, default)
 set('n', '<leader>cx', '<cmd>TroubleToggle<cr>', default)
 set('n', 'gd', vim.lsp.buf.definition, default)
 set('n', 'gD', vim.lsp.buf.declaration, default)
 set('n', 'gi', vim.lsp.buf.implementation, default)
 set('n', 'gr', vim.lsp.buf.references, default)
 set('n', 'K', vim.lsp.buf.signature_help, default)
-set('n', '<c-n>', vim.lsp.diagnostic.goto_next, default)
-set('n', '<c-p>', vim.lsp.diagnostic.goto_prev, default)
 
 -- Git
 set('n', '<leader>gg', '<cmd>NeoGit<cr>', default)
@@ -127,3 +126,4 @@ set('s', '<c-b>', _choice)
 
 -- CMP
 
+--]]

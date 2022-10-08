@@ -1,12 +1,12 @@
 #! /usr/bin/env sh
 
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
-export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
-export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/util-linux/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/util-linux/sbin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/make/libexec/gnubin:$PATH"
 
-export       LDFLAGS="-L/opt/homebrew/opt/util-linux/lib $LDFLAGS"
-export      CPPFLAGS="-I/opt/homebrew/opt/util-linux/include -$CPPFLAGS"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/util-linux/lib/pkgconfig:$PKG_CONFIG_PATH"
+export       LDFLAGS="-L$HOMEBREW_PREFIX/opt/util-linux/lib $LDFLAGS"
+export      CPPFLAGS="-I$HOMEBREW_PREFIX/opt/util-linux/include -$CPPFLAGS"
+export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/util-linux/lib/pkgconfig:$PKG_CONFIG_PATH"

@@ -2,8 +2,13 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Homebrew stuff
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="/opt/homebrew/bin/:$PATH"
+
+if [[ "$(arch)" == "i386" ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+else 
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 
 # export MATPLOTLIBRC=$HOME/.config/matplotlib
 export EDITOR=nvim

@@ -1,4 +1,4 @@
-local default = { silent = true }keu
+local default = { silent = true }
 local set = vim.keymap.set
 
 set('n', '<leader><Tab>', '<cmd>b#<CR>', default)
@@ -43,7 +43,7 @@ set('n', 'gm', '<cmd>TSHighlightCapturesUnderCursor<cr>', default)
 
 -- ToggleTerm
 set('t', '<c-h>', function() require('tmux').move_left() end, default)
-set('t', '<c-j>', function() require('tmux').move_down() end, default)
+set('t', '<c-j>', function() require('tmux').move_bottom() end, default)
 set('t', '<c-k>', function() require('tmux').move_top() end, default)
 set('t', '<c-l>', function() require('tmux').move_right() end, default)
 set('t', '<esc>', '<c-\\><c-n>', default)

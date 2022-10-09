@@ -4,7 +4,7 @@ return function()
   -- require("lualine").setup(evil_conf)
   require("lualine").setup {
     options = {
-      theme = "onedark",
+      theme = "auto",
       component_separators = '',
       section_separators = '',
     },

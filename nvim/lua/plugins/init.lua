@@ -111,14 +111,16 @@ local setup = function(use)
     }
 
     use {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = require "plugins._null-ls",
-        after = "nvim-lspconfig",
+        "jayp0521/mason-null-ls.nvim",
+        after = "mason.nvim",
+        config = require "plugins._mason-null-ls",
+
     }
 
     use {
-        "jayp0521/mason-null-ls.nvim",
-        after = "null-ls.nvim"
+        "jose-elias-alvarez/null-ls.nvim",
+        config = require "plugins._null-ls",
+        after = "mason-null-ls.nvim",
     }
 
     use {

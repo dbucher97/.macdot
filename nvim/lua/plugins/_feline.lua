@@ -1,3 +1,3 @@
-return function ()
-  require('feline').setup()
+return function()
+	require("feline").setup()
 end

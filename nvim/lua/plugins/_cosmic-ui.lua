@@ -1,5 +1,5 @@
-return function ()
-  require('cosmic-ui').setup{
-    border_style = 'rounded'
-  }
+return function()
+	require("cosmic-ui").setup({
+		border_style = "rounded",
+	})
 end

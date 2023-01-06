@@ -2,28 +2,28 @@
 
 -- Disableing builtin plugins that are not needed
 local disabled_built_ins = {
-	"2html_plugin",
-	"getscript",
-	"getscriptPlugin",
-	"gzip",
-	"logipat",
-	"netrw",
-	"netrwPlugin",
-	"netrwSettings",
-	"netrwFileHandlers",
-	"matchit",
-	"tar",
-	"tarPlugin",
-	"rrhelper",
-	"spellfile_plugin",
-	"vimball",
-	"vimballPlugin",
-	"zip",
-	"zipPlugin",
+    "2html_plugin",
+    "getscript",
+    "getscriptPlugin",
+    "gzip",
+    "logipat",
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "matchit",
+    "tar",
+    "tarPlugin",
+    "rrhelper",
+    "spellfile_plugin",
+    "vimball",
+    "vimballPlugin",
+    "zip",
+    "zipPlugin",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
-	vim.g["loaded_" .. plugin] = 1
+    vim.g["loaded_" .. plugin] = 1
 end
 
 -- use filetype.nvim
@@ -83,5 +83,5 @@ vim.g.mkdp_auto_close = 0
 vim.g.vimtex_quickfix_open_on_warnings = 0
 
 if vim.g.neovide then
-	require("neovide")
+    require "neovide"
 end

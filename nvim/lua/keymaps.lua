@@ -14,10 +14,10 @@ set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", default)
 set("n", "<leader>fc", "<cmd>Telescope commands<CR>", default)
 set("n", "<leader>fm", "<cmd>Telescope<CR>", default)
 set("n", "<leader>fn", function()
-	require("telescope.builtin").find_files({ cwd = "~/.config/nvim" })
+    require("telescope.builtin").find_files { cwd = "~/.config/nvim" }
 end, default)
 set("n", "<leader>fd", function()
-	require("telescope.builtin").find_files({ cwd = "~/.config/" })
+    require("telescope.builtin").find_files { cwd = "~/.config/" }
 end, default)
 
 -- Bufferline
@@ -43,16 +43,16 @@ set("n", "gm", "<cmd>TSHighlightCapturesUnderCursor<cr>", default)
 
 -- ToggleTerm
 set("t", "<c-h>", function()
-	require("tmux").move_left()
+    require("tmux").move_left()
 end, default)
 set("t", "<c-j>", function()
-	require("tmux").move_bottom()
+    require("tmux").move_bottom()
 end, default)
 set("t", "<c-k>", function()
-	require("tmux").move_top()
+    require("tmux").move_top()
 end, default)
 set("t", "<c-l>", function()
-	require("tmux").move_right()
+    require("tmux").move_right()
 end, default)
 set("t", "<esc>", "<c-\\><c-n>", default)
 set("t", "<c-t>", "<cmd>ToggleTerm<CR>", default)
@@ -63,20 +63,20 @@ set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>", default)
 set("n", "<leader>tT", "<cmd>ToggleTerm direction=tab<CR>", default)
 set("n", "<c-t>", ":ToggleTerm<CR>", default)
 for i = 1, 9 do
-	set("n", "<leader>t" .. i, ":ToggleTerm " .. i, default)
+    set("n", "<leader>t" .. i, ":ToggleTerm " .. i, default)
 end
 -- set('n', 'tt', ':ToggleTerm', default)
 --
 
 -- LSP
 set("n", "<leader>cr", function()
-	require("cosmic-ui").rename()
+    require("cosmic-ui").rename()
 end, default)
 set("n", "<leader>ca", function()
-	require("cosmic-ui").code_actions()
+    require("cosmic-ui").code_actions()
 end, default)
 set("n", "<leader>cf", function()
-	vim.lsp.buf.format({ async = true })
+    vim.lsp.buf.format { async = true }
 end, default)
 set("v", "<leader>cf", "<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", default)
 set("n", "<leader>ce", vim.diagnostic.open_float, default)
@@ -111,24 +111,24 @@ set("n", "<leader>px", "<cmd>PackerClean<cr>")
 -- Luasnip
 
 local _expand_or_jump = function()
-	local ls = require("luasnip")
-	if ls.expand_or_jumpable() then
-		ls.expand_or_jump()
-	end
+    local ls = require "luasnip"
+    if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+    end
 end
 
 local _jump_back = function()
-	local ls = require("luasnip")
-	if ls.jumpable(-1) then
-		ls.jump(-1)
-	end
+    local ls = require "luasnip"
+    if ls.jumpable(-1) then
+        ls.jump(-1)
+    end
 end
 
 local _choice = function()
-	local ls = require("luasnip")
-	if ls.choice_active() then
-		ls.change_choice(1)
-	end
+    local ls = require "luasnip"
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
 end
 
 set("i", "<c-l>", _expand_or_jump)

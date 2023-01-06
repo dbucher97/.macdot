@@ -1,3 +1,3 @@
 return function()
-	require("nvim-startup").setup()
+    require("nvim-startup").setup()
 end

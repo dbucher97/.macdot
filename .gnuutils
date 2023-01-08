@@ -8,5 +8,5 @@ export PATH="$HOMEBREW_PREFIX/opt/util-linux/sbin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/make/libexec/gnubin:$PATH"
 
 export       LDFLAGS="-L$HOMEBREW_PREFIX/opt/util-linux/lib $LDFLAGS"
-export      CPPFLAGS="-I$HOMEBREW_PREFIX/opt/util-linux/include -$CPPFLAGS"
+export      CPPFLAGS="-I$HOMEBREW_PREFIX/opt/util-linux/include $CPPFLAGS"
 export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/util-linux/lib/pkgconfig:$PKG_CONFIG_PATH"

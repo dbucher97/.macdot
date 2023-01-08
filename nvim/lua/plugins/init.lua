@@ -114,13 +114,39 @@ local setup = function(use)
         "jayp0521/mason-null-ls.nvim",
         after = "mason.nvim",
         config = require "plugins._mason-null-ls",
-
     }
 
     use {
         "jose-elias-alvarez/null-ls.nvim",
         config = require "plugins._null-ls",
         after = "mason-null-ls.nvim",
+    }
+
+    use {
+        "glepnir/lspsaga.nvim",
+        config = require "plugins._lspsaga",
+        opt = true,
+        setup = {
+            require("common").lazy_load "lspsaga.nvim",
+        },
+    }
+
+    use {
+        "stevearc/aerial.nvim",
+        config = require "plugins._aerial",
+        opt = true,
+        setup = {
+            require("common").lazy_load "aerial.nvim",
+        },
+    }
+
+    use {
+        "j-hui/fidget.nvim",
+        config = require "plugins._fidget",
+        opt = true,
+        setup = {
+            require("common").lazy_load "fidget.nvim",
+        },
     }
 
     use {
@@ -131,6 +157,8 @@ local setup = function(use)
             require("common").lazy_load "toggleterm.nvim",
         },
     }
+
+    use "~/projects/ltex_extra.nvim"
 
     -- use {
     --   "RRethy/vim-illuminate",

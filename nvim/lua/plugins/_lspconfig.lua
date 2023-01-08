@@ -1,14 +1,14 @@
 return function()
-    local lspconfig = require "lspconfig"
 
     vim.diagnostic.config {
         virtual_text = true,
         signs = true,
         underline = true,
-        update_in_insert = false,
+        update_in_insert = true,
         severity_sort = true,
     }
 
+    -- local lspconfig = require "lspconfig"
     -- local lsps = require "common.lsp-setup"
     -- for key, value in pairs(lsps) do
     --   lspconfig[key].setup(value)

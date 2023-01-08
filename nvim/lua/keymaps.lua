@@ -69,26 +69,25 @@ end
 --
 
 -- LSP
-set("n", "<leader>cr", function()
-    require("cosmic-ui").rename()
-end, default)
-set("n", "<leader>ca", function()
-    require("cosmic-ui").code_actions()
-end, default)
+set("n", "<leader>cr", "<cmd>Lspsaga rename<CR>", default)
+set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", default)
 set("n", "<leader>cf", function()
     vim.lsp.buf.format { async = true }
 end, default)
-set("v", "<leader>cf", "<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", default)
-set("n", "<leader>ce", vim.diagnostic.open_float, default)
+set("v", "<leader>cf", "<cmd>lua vim.lsp.buf.range_formatting()<cr>", default)
+set("n", "<leader>ce", "<cmd>Lspsaga show_line_diagnostics<CR>", default)
 set("n", "<leader>cq", vim.diagnostic.setqflist, default)
-set("n", "<c-n>", vim.diagnostic.goto_next, default)
-set("n", "<c-p>", vim.diagnostic.goto_prev, default)
+set("n", "<c-n>", "<cmd>Lspsaga diagnostic_jump_next<CR>", default)
+set("n", "<c-p>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", default)
 set("n", "<leader>cx", "<cmd>TroubleToggle<cr>", default)
 set("n", "gd", vim.lsp.buf.definition, default)
 set("n", "gD", vim.lsp.buf.declaration, default)
 set("n", "gi", vim.lsp.buf.implementation, default)
 set("n", "gr", vim.lsp.buf.references, default)
-set("n", "K", vim.lsp.buf.signature_help, default)
+set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", default)
+set("n", "gp", "<cmd>Lspsaga peek_definition<CR>", default)
+set("n", "<leader>co", "<cmd>LSoutlineToggle<CR>", default)
+set("n", "K", "<cmd>Lspsaga hover_doc<CR>", default)
 
 -- Git
 set("n", "<leader>gg", "<cmd>NeoGit<cr>", default)
@@ -137,6 +136,8 @@ set("i", "<c-b>", _choice)
 set("s", "<c-l>", _expand_or_jump)
 set("s", "<c-h>", _jump_back)
 set("s", "<c-b>", _choice)
+
+set("n", "<leader>q", "<cmd>lua CloseAllFloatingWindows()<CR>", default)
 
 -- CMP
 

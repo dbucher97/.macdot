@@ -158,7 +158,7 @@ local setup = function(use)
         },
     }
 
-    use "~/projects/ltex_extra.nvim"
+    use "barreiroleo/ltex_extra.nvim"
 
     -- use {
     --   "RRethy/vim-illuminate",

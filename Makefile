@@ -23,6 +23,7 @@ nvim: config
 alacritty: config
 	@echo "\033[0;32m~> Linking $@\033[0m"
 	ln -snf $(PWD)/$@ ~/.config/$@
+	git clone https://github.com/catppuccin/alacritty ~/.config/alacritty-catppuccin
 
 tmux:
 	@echo "\033[0;32m~> Linking $@\033[0m"

@@ -30,11 +30,11 @@ local setup = function(use)
         after = "packer.nvim",
     }
 
-    use {
-        "glepnir/dashboard-nvim",
-        after = "packer.nvim",
-        config = require "plugins._dashboard",
-    }
+    -- use {
+    --     "glepnir/dashboard-nvim",
+    --     after = "packer.nvim",
+    --     config = require "plugins._dashboard",
+    -- }
 
     use {
         "nvim-lualine/lualine.nvim",
@@ -112,15 +112,11 @@ local setup = function(use)
 
     use {
         "jayp0521/mason-null-ls.nvim",
+        requires = {"jose-elias-alvarez/null-ls.nvim"},
         after = "mason.nvim",
         config = require "plugins._mason-null-ls",
     }
 
-    use {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = require "plugins._null-ls",
-        after = "mason-null-ls.nvim",
-    }
 
     use {
         "glepnir/lspsaga.nvim",
@@ -143,6 +139,7 @@ local setup = function(use)
     use {
         "j-hui/fidget.nvim",
         config = require "plugins._fidget",
+        tag = "legacy",
         opt = true,
         setup = {
             require("common").lazy_load "fidget.nvim",

@@ -1,9 +1,18 @@
 return function()
+    local function my_on_attach(bufnr)
+        local api = require "nvim-tree.api"
+        local function opts(desc)
+            return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+        api.config.mappings.default_on_attach(bufnr)
+        vim.keymap.set('n', '<Tab>', api.tree.toggle, opts("Toggle"))
+        -- vim.keymap.set('n', '+', api.tree.cd, {})
+    end
+
     require("nvim-tree").setup {
         disable_netrw = true,
+        on_attach = my_on_attach,
         hijack_netrw = true,
-        open_on_setup = false,
-        ignore_ft_on_setup = {},
         open_on_tab = true,
         hijack_cursor = false,
         update_cwd = false,
@@ -34,6 +43,7 @@ return function()
             timeout = 500,
         },
         renderer = {
+            root_folder_label = false,
             indent_markers = { enable = true },
             highlight_git = true,
             highlight_opened_files = "all",
@@ -48,15 +58,14 @@ return function()
         },
         view = {
             width = 30,
-            hide_root_folder = true,
             side = "left",
-            mappings = {
-                custom_only = false,
-                list = {
-                    { key = "<Tab>", action = "close" },
-                    { key = "+", action = "cd" },
-                },
-            },
+            -- mappings = {
+            --     custom_only = false,
+            --     list = {
+            --         { key = "<Tab>", action = "close" },
+            --         { key = "+", action = "cd" },
+            --     },
+            -- },
             number = false,
             relativenumber = false,
             signcolumn = "yes",

@@ -1,5 +1,14 @@
 return function()
-    require("mason-null-ls").setup {
-        automatic_setup = true,
-    }
+    require("mason-null-ls").setup({
+        ensure_installed = {
+            -- Opt to list sources here, when available in mason.
+        },
+        automatic_installation = false,
+        handlers = {},
+    })
+    require("null-ls").setup({
+        sources = {
+            -- Anything not supported by mason.
+        }
+    })
 end

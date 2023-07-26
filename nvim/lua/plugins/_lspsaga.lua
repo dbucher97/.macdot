@@ -1,7 +1,10 @@
 return function()
-    require("lspsaga").init_lsp_saga {
-        code_action_lightbulb = {
+    require("lspsaga").setup {
+        ui = {
             enable = false,
         },
+        symbol_in_winbar = {
+            enable = false,
+        }
     }
 end

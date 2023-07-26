@@ -57,14 +57,14 @@ vim.o.fillchars = "fold:-"
 vim.o.completeopt = "menuone,noselect"
 
 vim.o.background = "dark"
-vim.o.textwidth = 80 -- Set text width
+vim.o.textwidth = 88 -- Set text width
 vim.o.list = true -- Show some invisible characters
 vim.o.listchars = "tab:> ,trail:•" -- Define chars to show instead:
 vim.o.number = true -- Print line number
 -- vim.o.relativenumber = true -- Relative line numbers
 vim.o.wrap = true -- Enable line wrap
 vim.o.signcolumn = "yes:1" -- Always show signcolumn on left
-vim.o.colorcolumn = "81" -- Display color column
+vim.o.colorcolumn = "89" -- Display color column
 vim.o.cursorline = true
 vim.o.pumheight = 15
 vim.o.undofile = true

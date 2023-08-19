@@ -1,19 +1,36 @@
 local lsp_settings = {
     lua_ls = {
-        Lua = {
-            runtime = {
-                version = "LuaJIT",
-            },
-            diagnostics = {
-                globals = { "vim" },
-            },
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-            telemetry = {
-                enable = false,
+        settings = {
+            Lua = {
+                runtime = {
+                    version = "LuaJIT",
+                },
+                diagnostics = {
+                    globals = { "vim" },
+                },
+                workspace = {
+                    library = vim.api.nvim_get_runtime_file("", true),
+                },
+                telemetry = {
+                    enable = false,
+                },
             },
         },
+    },
+    pyright = {
+        on_attach = function()
+            require'plenary.job':new({
+                command = "poetry",
+                args = {"env", "info", "-p"},
+                on_exit = vim.schedule_wrap(function (res, exit_code)
+                    if exit_code == 0 then
+                        local path = res:result()[1] .. "/bin/python"
+                        print("Poetry " .. path)
+                        vim.cmd("PyrightSetPythonPath " .. path)
+                    end
+                end)
+            }):sync()
+        end,
     },
 }
 
@@ -64,18 +81,21 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        lazy = true,
         keys = {
             { "<leader>cf", vim.lsp.buf.format },
             { "<leader>cr", vim.lsp.buf.rename },
-            { "<leader>gd", vim.lsp.buf.definition },
-            { "<leader>gD", vim.lsp.buf.declaration },
-            { "<leader>gr", vim.lsp.buf.references },
-            { "<leader>gi", vim.lsp.buf.implementations },
+            { "gd", vim.lsp.buf.definition },
+            { "gD", vim.lsp.buf.declaration },
+            { "gr", vim.lsp.buf.references },
+            { "gi", vim.lsp.buf.implementations },
             { "K", vim.lsp.buf.hover },
-        }
+            { "<c-K>", vim.lsp.buf.signature_help, mode = "i" },
+        },
     },
     {
         "williamboman/mason-lspconfig.nvim",
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "williamboman/mason.nvim",
             "neovim/nvim-lspconfig",
@@ -89,13 +109,14 @@ return {
             require("mason-lspconfig").setup_handlers({
                 function(server_name)
                     local settings = lsp_settings[server_name] or {}
-                    require("lspconfig")[server_name].setup({ settings = settings })
+                    require("lspconfig")[server_name].setup(settings)
                 end,
             })
         end,
     },
     {
         "jay-babu/mason-null-ls.nvim",
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "williamboman/mason.nvim",
             "jose-elias-alvarez/null-ls.nvim",
@@ -107,7 +128,7 @@ return {
         },
         config = function(_, opts)
             require("mason-null-ls").setup(opts)
-            require("null-ls").setup({sources = {}})
+            require("null-ls").setup({ sources = {} })
         end,
     },
 }

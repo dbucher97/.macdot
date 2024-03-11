@@ -85,8 +85,8 @@ return {
     },
     {
         "L3MON4D3/LuaSnip",
-        tag = "v2.*",
         lazy = true,
+        tag = "v2.2.0",
         config = function()
             local ls = require("luasnip")
             vim.keymap.set({ "i", "s" }, "<C-f>", function()

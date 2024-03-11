@@ -10,7 +10,11 @@ lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(
 lg = !"git lg1"
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

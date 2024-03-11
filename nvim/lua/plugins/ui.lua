@@ -24,7 +24,7 @@ return {
         },
         cmd = { "Telescope" },
     },
-    { "lukas-reineke/indent-blankline.nvim" },
+    -- { "lukas-reineke/indent-blankline.nvim" },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",

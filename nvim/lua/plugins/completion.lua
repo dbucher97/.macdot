@@ -50,7 +50,11 @@ return {
                     },
                 },
                 formatting = {
-                    format = require("lspkind").cmp_format({ mode = "symbol_text" }),
+                    format = require("lspkind").cmp_format({
+                        mode = "symbol_text",
+                        maxwidth = 30,
+                        ellipsis_char = "...",
+                    }),
                 },
             })
 
@@ -83,10 +87,14 @@ return {
         "L3MON4D3/LuaSnip",
         tag = "v2.*",
         lazy = true,
-        config = function ()
+        config = function()
             local ls = require("luasnip")
-            vim.keymap.set({"i", "s"}, "<C-f>", function() ls.jump( 1) end, {silent = true})
-            vim.keymap.set({"i", "s"}, "<C-b>", function() ls.jump(-1) end, {silent = true})
-        end
-    }
+            vim.keymap.set({ "i", "s" }, "<C-f>", function()
+                ls.jump(1)
+            end, { silent = true })
+            vim.keymap.set({ "i", "s" }, "<C-b>", function()
+                ls.jump(-1)
+            end, { silent = true })
+        end,
+    },
 }

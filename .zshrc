@@ -61,5 +61,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# opam configuration
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/david/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/david/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
 [[ ! -r /Users/david/.opam/opam-init/init.zsh ]] || source /Users/david/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

@@ -63,17 +63,19 @@ cmd - 7 : ~/.config/yabai/scripts/goto.sh 7
 cmd - 8 : ~/.config/yabai/scripts/goto.sh 8
 cmd - 9 : ~/.config/yabai/scripts/goto.sh 9
 
-shift + cmd - 1 : ~/.config/yabai/scripts/move.sh 1
-shift + cmd - 2 : ~/.config/yabai/scripts/move.sh 2
-shift + cmd - 3 : ~/.config/yabai/scripts/move.sh 3
-shift + cmd - 4 : ~/.config/yabai/scripts/move.sh 4
-shift + cmd - 5 : ~/.config/yabai/scripts/move.sh 5
-shift + cmd - 6 : ~/.config/yabai/scripts/move.sh 6
-shift + cmd - 7 : ~/.config/yabai/scripts/move.sh 7
-shift + cmd - 8 : ~/.config/yabai/scripts/move.sh 8
-shift + cmd - 9 : ~/.config/yabai/scripts/move.sh 9
+# shift + cmd - 1 : ~/.config/yabai/scripts/move.sh 1
+# shift + cmd - 2 : ~/.config/yabai/scripts/move.sh 2
+# shift + cmd - 3 : ~/.config/yabai/scripts/move.sh 3
+# shift + cmd - 4 : ~/.config/yabai/scripts/move.sh 4
+# shift + cmd - 5 : ~/.config/yabai/scripts/move.sh 5
+# shift + cmd - 6 : ~/.config/yabai/scripts/move.sh 6
+# shift + cmd - 7 : ~/.config/yabai/scripts/move.sh 7
+# shift + cmd - 8 : ~/.config/yabai/scripts/move.sh 8
+# shift + cmd - 9 : ~/.config/yabai/scripts/move.sh 9
 
 lctrl + lalt - space : ~/.config/yabai/scripts/goto.sh new
 lctrl + lalt - n : ~/.config/yabai/scripts/move.sh new
 lctrl + lalt - x : yabai -m space --destroy
+
+
 

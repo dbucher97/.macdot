@@ -9,6 +9,8 @@ else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+alias ib="PATH=$PATH:/usr/local/bin"
+
 
 # export MATPLOTLIBRC=$HOME/.config/matplotlib
 export EDITOR=nvim
@@ -33,3 +35,5 @@ if [ -f ~/.pprofile ]; then source ~/.pprofile; fi
 # if [ -f ~/.flutter_profile ]; then source ~/.flutter_profile; fi
 
 . "$HOME/.cargo/env"
+
+alias prp="poetry run python"

@@ -19,18 +19,31 @@ local lsp_settings = {
     },
     pyright = {
         on_attach = function()
-            require'plenary.job':new({
-                command = "poetry",
-                args = {"env", "info", "-p"},
-                on_exit = vim.schedule_wrap(function (res, exit_code)
-                    if exit_code == 0 then
-                        local path = res:result()[1] .. "/bin/python"
-                        print("Poetry " .. path)
-                        vim.cmd("PyrightSetPythonPath " .. path)
-                    end
-                end)
-            }):sync()
+            require("plenary.job")
+                :new({
+                    command = "poetry",
+                    args = { "env", "info", "-p" },
+                    on_exit = vim.schedule_wrap(function(res, exit_code)
+                        if exit_code == 0 then
+                            local path = res:result()[1] .. "/bin/python"
+                            print("Poetry " .. path)
+                            vim.cmd("PyrightSetPythonPath " .. path)
+                        end
+                    end),
+                })
+                :sync()
         end,
+        settings = {
+            pyright = { autoImportCompletion = true },
+            python = {
+                analysis = {
+                    autoSearchPaths = true,
+                    diagnosticMode = "openFilesOnly",
+                    useLibraryCodeForTypes = true,
+                    typeCheckingMode = "off",
+                },
+            },
+        },
     },
 }
 

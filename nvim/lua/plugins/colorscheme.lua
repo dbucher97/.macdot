@@ -1,1 +1,11 @@
-return { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 }
+return {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    -- config = function()
+    --     -- require("catppuccin").setup({
+    --     --     -- falvour = "macchhiato",
+    --     --     -- transparent_background = false,
+    --     -- })
+    -- end,
+}

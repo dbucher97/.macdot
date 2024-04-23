@@ -45,7 +45,7 @@ local opts = {}
 require("lazy").setup("plugins", opts)
 
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme rose-pine]])
+vim.cmd([[colorscheme catppuccin]])
 
 
 vim.keymap.set("n", "<C-j>", "<C-w>j", {silent = true})

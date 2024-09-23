@@ -98,12 +98,12 @@ return {
         keys = {
             { "<leader>cf", vim.lsp.buf.format },
             { "<leader>cr", vim.lsp.buf.rename },
-            { "gd", vim.lsp.buf.definition },
-            { "gD", vim.lsp.buf.declaration },
-            { "gr", vim.lsp.buf.references },
-            { "gi", vim.lsp.buf.implementations },
-            { "K", vim.lsp.buf.hover },
-            { "<c-K>", vim.lsp.buf.signature_help, mode = "i" },
+            { "gd",         vim.lsp.buf.definition },
+            { "gD",         vim.lsp.buf.declaration },
+            { "gr",         vim.lsp.buf.references },
+            { "gi",         vim.lsp.buf.implementations },
+            { "K",          vim.lsp.buf.hover },
+            { "<c-K>",      vim.lsp.buf.signature_help, mode = "i" },
         },
     },
     {
@@ -143,5 +143,9 @@ return {
             require("mason-null-ls").setup(opts)
             require("null-ls").setup({ sources = {} })
         end,
+    },
+    {
+        "danymat/neogen",
+        config = true,
     },
 }

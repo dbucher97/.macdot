@@ -1,5 +1,7 @@
 all: zsh git nvim alacritty tmux karabiner keyboard latexindent.yaml stylua.toml .latexmkrc
 
+base: zsh git nvim tmux
+
 zsh: profile
 	@echo "\033[0;32m~> Linking $@\033[0m"
 	mkdir -p ~/.local/share/zsh/

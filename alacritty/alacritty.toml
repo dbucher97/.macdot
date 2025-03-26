@@ -1,0 +1,186 @@
+import = ["/Users/david/.config/alacritty-catppuccin/catppuccin-macchiato.toml"]
+live_config_reload = true
+
+[cursor]
+unfocused_hollow = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "Mononoki Nerd Font"
+style = "Medium"
+
+[font.italic]
+family = "Mononoki Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Mononoki Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Period"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Minimize"
+key = "M"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00021"
+key = "Key1"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00022"
+key = "Key2"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00023"
+key = "Key3"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00024"
+key = "Key4"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00025"
+key = "Key5"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00026"
+key = "Key6"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00027"
+key = "Key7"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00028"
+key = "Key8"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u00029"
+key = "Key9"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u000210"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "Return"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0002%"
+key = "Return"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002g"
+key = "Tab"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0002L"
+key = "Tab"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002h"
+key = "Insert"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002j"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002k"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002l"
+key = "L"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002t"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002x"
+key = "Q"
+mods = "Control"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+option_as_alt = "None"
+opacity = 0.9
+blur = true
+
+[window.dimensions]
+columns = 120
+lines = 38
+
+[window.padding]
+x = 2
+y = 2
+

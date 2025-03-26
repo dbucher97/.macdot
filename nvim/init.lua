@@ -44,12 +44,12 @@ local opts = {}
 
 require("lazy").setup("plugins", opts)
 
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme catppuccin]])
+-- vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme onedark]])
 
 
 vim.keymap.set("n", "<C-j>", "<C-w>j", {silent = true})
 vim.keymap.set("n", "<C-k>", "<C-w>k", {silent = true})
-vim.keymap.set("n", "<C-l>", "<C-w>l", {silent = true})
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", {silent = true})
 vim.keymap.set("n", "<C-h>", "<C-w>h", {silent = true})
 vim.keymap.set("n", "<leader><tab>", ":b#<cr>", {silent = true})

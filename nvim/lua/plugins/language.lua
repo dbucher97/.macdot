@@ -28,6 +28,10 @@ local lsp_settings = {
                             local path = res:result()[1] .. "/bin/python"
                             print("Poetry " .. path)
                             vim.cmd("PyrightSetPythonPath " .. path)
+                        else
+                            local path = ".venv/bin/python"
+                            print("Python " .. path)
+                            vim.cmd("PyrightSetPythonPath " .. path)
                         end
                     end),
                 })

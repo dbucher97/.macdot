@@ -2,25 +2,28 @@ return {
     -- TELESCOPE ---------------------------------------------------------------
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.2",
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
         config = function()
+            local actions = require("telescope.actions")
             require("telescope").setup({
                 defaults = {
                     mappings = {
                         i = {
-                            ["<esc>"] = require("telescope.actions").close
+                            ["<esc>"] = actions.close,
+                            ["<C-e>"] = actions.send_selected_to_qflist
+                                + actions.open_qflist,
                         },
                     },
-                }
+                },
             })
         end,
         keys = {
             { "<leader>ff", "<cmd>Telescope fd<cr>" },
             { "<leader>fh", "<cmd>Telescope help_tags<cr>" },
-            { "<leader>f,", "<cmd>Telescope buffers<cr>" },
+            { "<leader>fb", "<cmd>Telescope buffers<cr>" },
+            { "<leader>fg", "<cmd>Telescope live_grep<cr>" },
         },
         cmd = { "Telescope" },
     },
@@ -44,6 +47,12 @@ return {
                     width = 30,
                 },
             })
+        end,
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns").setup()
         end,
     },
 }

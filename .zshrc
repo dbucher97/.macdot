@@ -70,3 +70,5 @@ if [ -f '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '
 [[ ! -r /Users/david/.opam/opam-init/init.zsh ]] || source /Users/david/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 export LUNA_ENCRYPTION_KEY="kVlHY6Ru5Y-oMGOqg-x6yt_6fqp1kQ0URmktMMKA38I="
+
+source "$HOME/.cargo/env"

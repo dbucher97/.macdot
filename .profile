@@ -34,8 +34,6 @@ if [ -f ~/.gnuutils ]; then source ~/.gnuutils; fi
 if [ -f ~/.pprofile ]; then source ~/.pprofile; fi
 # if [ -f ~/.flutter_profile ]; then source ~/.flutter_profile; fi
 
-. "$HOME/.cargo/env"
-
 alias prp="poetry run python"
 
 alias ruff="poetry run ruff check --fix && poetry run ruff format"

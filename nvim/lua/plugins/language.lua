@@ -158,7 +158,7 @@ return {
             "jose-elias-alvarez/null-ls.nvim",
         },
         opts = {
-            ensure_installed = { "black", "jq" },
+            ensure_installed = { "jq" },
             automatic_installation = false,
             handlers = {},
         },

@@ -1,3 +1,35 @@
+local function get_python_path()
+    -- Check if poetry is installed and available on the system
+    local poetry_installed = os.execute("command -v poetry > /dev/null 2>&1")
+
+    if poetry_installed then
+        -- Poetry is installed, try to get the Python path from it
+        local handle = io.popen("poetry env info -p 2>/dev/null")
+        if handle then
+            local poetry_env_path = handle:read("*a"):gsub("%s+$", "")
+            handle:close()
+            -- If poetry env info succeeded and returned a path
+            if poetry_env_path and poetry_env_path ~= "" then
+                local python_path = poetry_env_path .. "/bin/python"
+                print("Poetry environment found: " .. python_path)
+                return python_path
+            end
+        end
+    end
+
+    local venv_exists = os.execute("[ -d .venv ] > /dev/null 2>&1")
+
+    if venv_exists then
+        -- Use .venv/bin/python if it exists
+        local default_path = ".venv/bin/python"
+        print(".venv found: " .. default_path)
+        return default_path
+    else
+        -- No .venv directory found
+        return "python" -- Use system Python as last resort
+    end
+end
+
 local lsp_settings = {
     lua_ls = {
         settings = {
@@ -19,23 +51,10 @@ local lsp_settings = {
     },
     pyright = {
         on_attach = function()
-            require("plenary.job")
-                :new({
-                    command = "poetry",
-                    args = { "env", "info", "-p" },
-                    on_exit = vim.schedule_wrap(function(res, exit_code)
-                        if exit_code == 0 then
-                            local path = res:result()[1] .. "/bin/python"
-                            print("Poetry " .. path)
-                            vim.cmd("PyrightSetPythonPath " .. path)
-                        else
-                            local path = ".venv/bin/python"
-                            print("Python " .. path)
-                            vim.cmd("PyrightSetPythonPath " .. path)
-                        end
-                    end),
-                })
-                :sync()
+            local python_path = get_python_path()
+            vim.schedule(function ()
+                vim.cmd("PyrightSetPythonPath " .. python_path)
+            end)
         end,
         settings = {
             pyright = { autoImportCompletion = true },
@@ -102,12 +121,12 @@ return {
         keys = {
             { "<leader>cf", vim.lsp.buf.format },
             { "<leader>cr", vim.lsp.buf.rename },
-            { "gd",         vim.lsp.buf.definition },
-            { "gD",         vim.lsp.buf.declaration },
-            { "gr",         vim.lsp.buf.references },
-            { "gi",         vim.lsp.buf.implementations },
-            { "K",          vim.lsp.buf.hover },
-            { "<c-K>",      vim.lsp.buf.signature_help, mode = "i" },
+            { "gd", vim.lsp.buf.definition },
+            { "gD", vim.lsp.buf.declaration },
+            { "gr", vim.lsp.buf.references },
+            { "gi", vim.lsp.buf.implementations },
+            { "K", vim.lsp.buf.hover },
+            { "<c-K>", vim.lsp.buf.signature_help, mode = "i" },
         },
     },
     {

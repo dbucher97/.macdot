@@ -150,23 +150,23 @@ return {
             })
         end,
     },
-    {
-        "jay-babu/mason-null-ls.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        dependencies = {
-            "williamboman/mason.nvim",
-            "jose-elias-alvarez/null-ls.nvim",
-        },
-        opts = {
-            ensure_installed = { "jq" },
-            automatic_installation = false,
-            handlers = {},
-        },
-        config = function(_, opts)
-            require("mason-null-ls").setup(opts)
-            require("null-ls").setup({ sources = {} })
-        end,
-    },
+    -- {
+    --     "jay-babu/mason-null-ls.nvim",
+    --     event = { "BufReadPre", "BufNewFile" },
+    --     dependencies = {
+    --         "williamboman/mason.nvim",
+    --         "jose-elias-alvarez/null-ls.nvim",
+    --     },
+    --     opts = {
+    --         ensure_installed = { "jq" },
+    --         automatic_installation = false,
+    --         handlers = {},
+    --     },
+    --     config = function(_, opts)
+    --         require("mason-null-ls").setup(opts)
+    --         require("null-ls").setup({ sources = {} })
+    --     end,
+    -- },
     {
         "danymat/neogen",
         config = true,

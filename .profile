@@ -2,7 +2,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Homebrew stuff
-if [ "$(uname)" == "Darwin" ]; then
+if [[ "$(uname)" == "Darwin" ]]; then
     if [[ "$(arch)" == "i386" ]]; then
       eval "$(/usr/local/bin/brew shellenv)"
     else 

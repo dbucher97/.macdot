@@ -43,12 +43,16 @@ alias ruff="poetry run ruff check --fix && poetry run ruff format"
 
 topng() {
     local output_base="${1%.pdf}"
+    local range=""
+    if [ -n "$3" ]; then
+        range="[$3]"
+    fi
     if [ -z "$2" ]; then
         local dpi=300
     else
         local dpi="$2"
     fi
 
-    magick -density $dpi $1 "${output_base}.png" 
+    magick -density $dpi "$1$range" -alpha remove "${output_base}.png" 
 }
 

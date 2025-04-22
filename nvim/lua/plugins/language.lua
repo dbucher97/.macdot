@@ -52,7 +52,7 @@ local lsp_settings = {
     pyright = {
         on_attach = function()
             local python_path = get_python_path()
-            vim.schedule(function ()
+            vim.schedule(function()
                 vim.cmd("PyrightSetPythonPath " .. python_path)
             end)
         end,
@@ -119,7 +119,7 @@ return {
         "neovim/nvim-lspconfig",
         lazy = true,
         keys = {
-            { "<leader>cf", vim.lsp.buf.format },
+            -- { "<leader>cf", vim.lsp.buf.format },
             { "<leader>cr", vim.lsp.buf.rename },
             { "gd", vim.lsp.buf.definition },
             { "gD", vim.lsp.buf.declaration },
@@ -150,7 +150,7 @@ return {
             })
         end,
     },
-    {
+    --[[ {
         "jay-babu/mason-null-ls.nvim",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
@@ -165,6 +165,22 @@ return {
         config = function(_, opts)
             require("mason-null-ls").setup(opts)
             require("null-ls").setup({ sources = {} })
+        end,
+    }, ]]
+    {
+        "stevearc/conform.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require("conform").setup({
+                formatters_by_ft = {
+                    lua = { "stylua", lsp_format = "fallback" },
+                    python = { "isort", "ruff" },
+                    rust = { "rustfmt" },
+                },
+            })
+            vim.keymap.set("n", "<leader>cf", function()
+                require("conform").format()
+            end, { silent = true })
         end,
     },
     {

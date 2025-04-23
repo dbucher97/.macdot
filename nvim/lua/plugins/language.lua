@@ -176,6 +176,7 @@ return {
                     lua = { "stylua", lsp_format = "fallback" },
                     python = { "isort", "ruff" },
                     rust = { "rustfmt" },
+                    json = { "jq" }
                 },
             })
             vim.keymap.set("n", "<leader>cf", function()

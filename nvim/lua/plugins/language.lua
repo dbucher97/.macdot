@@ -1,3 +1,4 @@
+
 local function get_python_path(verbose)
     -- Check if poetry is installed and available on the system
     local poetry_installed = os.execute("command -v poetry > /dev/null 2>&1")
@@ -65,7 +66,7 @@ local lsp_settings = {
     },
 }
 
-return {
+_ = {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
@@ -253,3 +254,5 @@ return {
         event = { "BufReadPre", "BufNewFile" },
     },
 }
+
+return {}

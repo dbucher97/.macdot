@@ -1,4 +1,4 @@
-return {
+_ = {
     "navarasu/onedark.nvim",
     config = function()
         require("onedark").setup({
@@ -6,3 +6,5 @@ return {
         })
     end,
 }
+
+return {}

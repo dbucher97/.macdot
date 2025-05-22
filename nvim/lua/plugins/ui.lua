@@ -1,4 +1,4 @@
-return {
+_ = {
     -- TELESCOPE ---------------------------------------------------------------
     {
         "nvim-telescope/telescope.nvim",
@@ -73,3 +73,5 @@ return {
         },
     },
 }
+
+return {}

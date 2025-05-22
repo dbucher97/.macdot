@@ -1,4 +1,4 @@
-return {
+_ = {
     {
         "numToStr/Comment.nvim",
         event = "InsertEnter",
@@ -35,3 +35,5 @@ return {
         },
     },
 }
+
+return {}

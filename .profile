@@ -56,3 +56,40 @@ topng() {
     magick -density $dpi "$1$range" -alpha remove "${output_base}.png" 
 }
 
+totransparentpng() {
+    local output_base="${1%.pdf}"
+    local range=""
+    if [ -n "$3" ]; then
+        range="[$3]"
+    fi
+    if [ -z "$2" ]; then
+        local dpi=300
+    else
+        local dpi="$2"
+    fi
+
+    magick -density $dpi "$1$range" "${output_base}.png" 
+}
+
+
+devattach () {
+    local devcontainer="$(basename $PWD)"
+    local output_array=()
+    while IFS= read -r line; do
+        output_array+=("$line")
+    done < <(docker ps --format "{{.Image}} {{.Names}}" | grep "$devcontainer")
+    local array_length=${#output_array[@]}
+
+    if [ "$array_length" -eq 0 ]; then
+        echo "Error: No running container found!" >&2
+        return 1
+    elif [ "$array_length" -gt 2 ]; then
+        echo "Error: Too many containers found!" >&2
+        return 1
+    fi
+
+    local first_line="${output_array[1]}"
+    local val=$(echo "$first_line" | awk '{print $2}')
+
+    docker exec -it "$val" sh -c "cd /workspaces/$devcontainer/ && zsh"
+}

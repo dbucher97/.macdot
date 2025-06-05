@@ -8,24 +8,30 @@ return { "folke/snacks.nvim",
         -- refer to the configuration section below
         bigfile = { enabled = true },
         dashboard = { enabled = true },
-        explorer = { enabled = true },
-        indent = { enabled = true, animate = { enabled = false } },
-        input = { enabled = true },
-        picker = { enabled = true,
-             win = {
+        explorer = { enabled = true,
+            win = {
                 input = {
                   keys = {
-                    ["<Tab>"] = { "Snacks.explorer", mode = { "n", "i" } },
+                      ["<Tab>"] = { "git_stage", mode = { "n", "i" } },
                   },
                 },
-              },
+            },
         },
+        indent = { enabled = true, animate = { enabled = false } },
+        input = { enabled = true },
+        picker = { enabled = true },
         notifier = { enabled = true },
         quickfile = { enabled = true },
         scope = { enabled = true },
-        scroll = { enabled = false },
+        scroll = { enabled = true, 
+          animate_repeat = {
+            delay = 100, -- delay in ms before using the repeat animation
+            duration = { step = 0, total = 0 },
+            easing = "linear",
+          },
+        },
         statuscolumn = { enabled = true },
-        words = { enabled = true },
+        words = { enabled = false },
     },
     keys = {
         -- Top Pickers & Explorer
@@ -35,7 +41,6 @@ return { "folke/snacks.nvim",
         { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
         { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
         { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-        { "<tab>", function() Snacks.explorer() end, desc = "File Explorer" },
         -- find
         { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
         { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },

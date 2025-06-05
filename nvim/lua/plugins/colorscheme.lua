@@ -1,10 +1,8 @@
-_ = {
-    "navarasu/onedark.nvim",
-    config = function()
-        require("onedark").setup({
-            transparent = true
-        })
-    end,
+return {
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = true,
+        opts = { transparent_mode = false },
+    },
 }
-
-return {}

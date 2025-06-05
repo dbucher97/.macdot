@@ -1,4 +1,4 @@
-_ = {
+return {
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
@@ -98,4 +98,3 @@ _ = {
         end,
     },
 }
-return {}

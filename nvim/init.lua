@@ -54,3 +54,25 @@ vim.keymap.set("n", "<leader><tab>", ":b#<cr>", { silent = true })
 -- vim.keymap.set("n", "L", vim.diagnostic.open_float, { silent = true })
 --
 vim.diagnostic.config({ virtual_text = true })
+
+-- local skim_mod = require("custom.skim")
+-- _G.open_skim = skim_mod.open_skim
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+--     pattern = "tex",
+--     callback = function()
+--         -- Create buffer-local user command (only available in tex files)
+--         vim.api.nvim_buf_create_user_command(
+--             0,
+--             "OpenSkim",
+--             skim_mod.open_skim,
+--             { desc = "Open PDF from Tectonic with Skim" }
+--         )
+--
+--         -- Create buffer-local key mapping (only available in tex files)
+--         vim.keymap.set("n", "<leader>ll", skim_mod.open_skim, {
+--             buffer = 0,
+--             desc = "Open Tectonic PDF in Skim",
+--         })
+--     end,
+-- })

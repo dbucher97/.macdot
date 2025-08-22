@@ -1,38 +1,50 @@
--- local function get_python_path(verbose)
---     -- Check if poetry is installed and available on the system
---     local poetry_installed = os.execute("command -v poetry > /dev/null 2>&1")
---
---     if poetry_installed == 0 then
---         -- Poetry is installed, try to get the Python path from it
---         local handle = io.popen("poetry env info -p 2> /dev/null")
---         if handle then
---             local poetry_env_path = handle:read("*a"):gsub("%s+$", "")
---             handle:close()
---             -- If poetry env info succeeded and returned a path
---             if poetry_env_path and poetry_env_path ~= "" then
---                 local python_path = poetry_env_path .. "/bin/python"
---                 if verbose then
---                     print("Poetry environment found: " .. python_path)
---                 end
---                 return python_path
---             end
---         end
---     end
---
---     local venv_exists = os.execute("[ -d .venv ] > /dev/null 2>&1")
---
---     if venv_exists == 0 then
---         -- Use .venv/bin/python if it exists
---         local default_path = ".venv/bin/python"
---         if verbose then
---             print(".venv found: " .. default_path)
---         end
---         return default_path
---     else
---         -- No .venv directory found
---         return "python" -- Use system Python as last resort
---     end
--- end
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspKeymaps", {}),
+    callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client == nil then
+            return
+        end
+
+        -- Only apply to texlab
+        if client.name == "texlab" then
+
+            local servername = vim.v.servername
+
+            -- Define cache directory and file
+            local cache_dir = vim.fn.stdpath("cache")
+            local cache_file = cache_dir .. "/tex_servername"
+
+            -- Ensure cache directory exists
+            vim.fn.mkdir(cache_dir, "p")
+            -- Write server name to cache file
+            local file = io.open(cache_file, "w")
+            if file then
+                file:write(servername)
+                file:close()
+            end
+
+            local opts = { buffer = ev.buf, silent = true }
+
+            -- Example keymaps for texlab
+            vim.keymap.set("n", "<leader>lb", "<cmd>LspTexlabBuild<CR>", opts)
+            vim.keymap.set("n", "<leader>lc", "<cmd>LspTexlabCancelBuild<CR>", opts)
+            vim.keymap.set("n", "<leader>ll", "<cmd>LspTexlabForward<CR>", opts)
+            vim.keymap.set(
+                "n",
+                "<leader>ce",
+                "<cmd>LspTexlabChangeEnvironment<CR>",
+                opts
+            )
+            vim.keymap.set(
+                "n",
+                "<leader>fe",
+                "<cmd>LspTexlabFindEnvironments<CR>",
+                opts
+            )
+        end
+    end,
+})
 
 local lsp_settings = {
     lua_ls = {
@@ -63,6 +75,40 @@ local lsp_settings = {
             python = { pythonPath = ".venv/bin/python" },
         },
     },
+    rust_analyzer = {
+        settings = {
+            ["rust-analyzer"] = {
+                cargo = { features = "all" },
+            },
+        },
+    },
+    texlab = {
+        settings = {
+            texlab = {
+                build = {
+                    executable = "nextonic",
+                    args = {
+                        "compile",
+                        "--synctex",
+                        "--keep-logs",
+                        "--keep-intermediates",
+                        "-o",
+                        "build",
+                        "%f",
+                    },
+                    onSave = true,
+                    forwardSearchAfter = true,
+                    auxDirectory = "build",
+                    logDirectory = "build",
+                    pdfDirectory = "build",
+                },
+                forwardSearch = {
+                    executable = "/Applications/Skim.app/Contents/SharedSupport/displayline",
+                    args = { "-n", "-g", "-b", "%l", "%p", "%f"},
+                },
+            },
+        },
+    },
 }
 
 return {
@@ -89,6 +135,7 @@ return {
                 "luap",
                 "markdown",
                 "markdown_inline",
+                "latex",
                 "python",
                 "query",
                 "regex",
@@ -154,6 +201,8 @@ return {
                     toml = { "pyproject-fmt" },
                     rust = { "rustfmt" },
                     json = { "jq" },
+                    html = { "djlint" },
+                    tex = { "latexindent" },
                 },
             })
             vim.keymap.set("n", "<leader>cf", function()

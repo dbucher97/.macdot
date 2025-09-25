@@ -72,3 +72,4 @@ if [ -f '/Users/david/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '
 if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
+eval "$(uv generate-shell-completion zsh)"
